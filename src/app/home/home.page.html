@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>App Cámara - 2do Parcial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="capturarFoto()">
+    Tomar fotografía
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" (click)="abrirGaleria()">
+    Elegir de la galería
+  </ion-button>
+
+  @if (mensajeError) {
+    <p>{{ mensajeError }}</p>
+  }
+
+  @if (fotoUrl) {
+    <ion-img [src]="fotoUrl" alt="Foto seleccionada"></ion-img>
+  }
+</ion-content>
